@@ -1,0 +1,59 @@
+﻿@model ServiceReferenceStudent.student
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="text-align:center;font-family:Poppins;color:darkkhaki;">Edit</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label" style="font-family: Poppins; color: dimgray;">CNE:</label>
+                <input asp-for="cne" class="form-control" />
+                <span asp-validation-for="cne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="font-family: Poppins; color: dimgray;" class="control-label">Email:</label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="font-family: Poppins; color: dimgray;" class="control-label">First Name:</label>
+                <input asp-for="firstname" class="form-control" />
+                <span asp-validation-for="firstname" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label style="font-family: Poppins; color: dimgray;" class="control-label">Last Name:</label>
+                <input asp-for="lastname" class="form-control" />
+                <span asp-validation-for="lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" style="font-family: Poppins; color: dimgray;">Level:</label>
+                <input asp-for="level" class="form-control" />
+                <span asp-validation-for="level" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" style="font-family: Poppins; color: dimgray;">Phone Number:</label>
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-light" style="width:130px;font-family:Poppins;" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" style="font-family:Poppins;color:firebrick;text-align:center;">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

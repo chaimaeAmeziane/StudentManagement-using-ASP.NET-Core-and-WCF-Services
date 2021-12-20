@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Microsoft.AspNetCore.Identity
+@using StudentManagement.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="text-center">
+    <h1 style="color:darkslategrey;font-family:Poppins" class="display-4">Students Management</h1>
+
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <a style="color:dimgrey;font-family:Poppins;font-size:150%;padding-top:10%;" href="@Url.Action("Index", "students")">List of all students</a>
+        <br />
+        <img src="https://static.lematin.ma/files/lematin/images/articles/2019/12/3db8f07b8c12c39edf6805759fa90a5a.jpg" alt="Sample Photo" />
+    }
+    else
+    {
+        <form asp-action="Search">
+            <div class="input-group" style="width:80%;text-align:center;padding-left:19%;">
+                <input class="form-control" name="CNE" placeholder="Search your details when entering your CNE" style="font-family:Poppins;width:10%;" />
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-dark" value="Search">Search</button>
+                </div>
+            </div>
+        </form>
+        <br />
+        <img src="https://www.tawjihmaroc.com/media/cache/size_730_450/front/images/schools/79/7b2544d64cf16d6bdab2db1651f6a200.png" alt="Sample Photo" />
+
+        <br /> <br /> <br />
+
+        <div class="about-section">
+            <h1>ENSA TANGIER</h1>
+            <p>National school of applicated science of Tangier</p>
+        </div>
+        <br />
+        <h2 style="text-align:center">Let us present you</h2>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQHvRBjINPPuXQ/profile-displayphoto-shrink_800_800/0/1608021762413?e=1645056000&v=beta&t=fxP2Rwg0qNFB5pU3xU2r0siknLebTbu05o9quX_T3uE" alt="Jane" style="width:100%">
+                    <div class="container">
+                        <h2>Ahmed Moussa</h2>
+                        <p class="title">Director</p>
+                        <p></p>
+                        <p>ahmedmoussa@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="https://media-exp1.licdn.com/dms/image/C4D03AQG8U6W8KqdeCg/profile-displayphoto-shrink_800_800/0/1626969174200?e=1645056000&v=beta&t=vWFIGxMtypQ0VmSkmtfWNjkTrm6szPlYZHosNedtj9g" alt="Mike" style="width:100%">
+                    <div class="container">
+                        <h2>Yassine Laaziz</h2>
+                        <p class="title">Deputy Director</p>
+                        <p></p>
+                        <p>yassinelaaziz@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br /><br /><br />
+    }
+
+</div>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        font-family: Poppins;
+    }
+
+    html {
+        box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+    }
+
+    .about-section {
+        padding: 50px;
+        text-align: center;
+        background-color: #343a40;
+        color: white;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+        .container::after, .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+    .title {
+        color: grey;
+    }
+
+    .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .button:hover {
+            background-color: #555;
+        }
+    }
+</style>

@@ -1,0 +1,53 @@
+﻿@model ServiceReferenceStudent.student
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="text-align:center;font-family:Poppins;color:darkkhaki;">Details</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2" style="font-family:Poppins;color:darkolivegreen;font-weight:500;">
+            CNE:
+        </dt>
+        <dd class="col-sm-10" style="font-family:Poppins;color:black;font-weight:normal;">
+            @Html.DisplayFor(model => model.cne)
+        </dd>
+        <dt class="col-sm-2" style="font-family:Poppins;color:darkolivegreen;font-weight:500;">
+            Email:
+        </dt>
+        <dd class="col-sm-10" style="font-family:Poppins;color:black;font-weight:normal;">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt class="col-sm-2" style="font-family:Poppins;color:darkolivegreen;font-weight:500;">
+            First Name:
+        </dt>
+        <dd class="col-sm-10" style="font-family:Poppins;color:black;font-weight:normal;">
+            @Html.DisplayFor(model => model.firstname)
+        </dd>
+        <dt class="col-sm-2" style="font-family:Poppins;color:darkolivegreen;font-weight:500;">
+            Last Name:
+        </dt>
+        <dd class="col-sm-10" style="font-family:Poppins;color:black;font-weight:normal;">
+            @Html.DisplayFor(model => model.lastname)
+        </dd>
+        <dt class="col-sm-2" style="font-family:Poppins;color:darkolivegreen;font-weight:500;">
+            Level:
+        </dt>
+        <dd class="col-sm-10" style="font-family:Poppins;color:black;font-weight:normal;">
+            @Html.DisplayFor(model => model.level)
+        </dd>
+        <dt class="col-sm-2" style="font-family:Poppins;color:darkolivegreen;font-weight:500;">
+            Phone Number:
+        </dt>
+        <dd class="col-sm-10" style="font-family:Poppins;color:black;font-weight:normal;">
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id" style="font-family:Poppins;">Edit</a> |
+    <a asp-action="Index" style="font-family:Poppins;color:brown;text-align:center;">Back to List</a>
+</div>

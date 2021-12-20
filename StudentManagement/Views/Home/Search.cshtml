@@ -1,0 +1,39 @@
+﻿@model ServiceReferenceStudent.student
+
+@{
+    ViewData["Title"] = "Search";
+
+}
+<h3 style="text-align:center;font-family:Poppins;color:darkkhaki;">Your Search : </h3>
+
+<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);transition: 0.3s;width: 30%;margin:auto 35%;text-align:center;">
+    <img src="https://www.educatorroundtable.org/wp-content/uploads/2017/02/33.png" alt="Avatar" style="width:100%">
+    <div class="container" style="padding: 2px 16px;">
+        <dd style="font-family:Poppins;color:black;font-weight:100;">
+            <h4>@Html.DisplayFor(model => model.cne)</h4>
+        </dd>
+        <dd style="font-family:Poppins;color:black;font-weight:100;">
+            <h6>@Html.DisplayFor(model => model.firstname)</h6>
+        </dd>
+
+        <dd style="font-family:Poppins;color:black;font-weight:100;">
+            <h6>@Html.DisplayFor(model => model.lastname)</h6>
+        </dd>
+
+        <dd style="font-family:Poppins;color:black;font-weight:100;">
+            <h6>@Html.DisplayFor(model => model.level)</h6>
+        </dd>
+        <dd style="font-family:Poppins;color:black;font-weight:100;">
+            <h6>@Html.DisplayFor(model => model.email)</h6>
+        </dd>
+
+        <dd style="font-family:Poppins;color:black;font-weight:100;">
+            <h6>@Html.DisplayFor(model => model.phone)</h6>
+        </dd>
+
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index" style="font-family:Poppins;color:darkcyan;margin:auto 47%;">Go Back</a>
+</div>
